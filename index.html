@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>安俊 | AI 电商设计作品集</title>
+    <meta
+      name="description"
+      content="安俊的 AI 电商设计作品集，展示海报、详情页、大促专题、AI 视频与电商视觉策划过程。"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260704-linked-work-library" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="ambient-lights" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <header class="site-header" aria-label="网站导航">
+      <a class="logo" href="#top" aria-label="安俊作品集首页">
+        <img src="assets/brand/yierdun-logo.png" alt="医尔顿 logo" />
+      </a>
+      <nav class="nav-pill">
+        <a href="#top">首页</a>
+        <a href="#posters">海报</a>
+        <a href="#detail">详情专题</a>
+        <a href="#video">AI视频</a>
+        <a href="#contact">联系</a>
+        <a href="admin.html">后台</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div id="scroll-video-container" class="flower-video-layer" aria-hidden="true">
+          <canvas id="video-canvas"></canvas>
+          <video
+            id="video-fallback"
+            class="flower-video"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="auto"
+            crossorigin="anonymous"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260616_212935_bbf608da-62d1-4f25-9be4-c346e4d09cc8.mp4"
+          ></video>
+          <div class="flower-video-overlay"></div>
+        </div>
+        <canvas id="particles-canvas" aria-hidden="true"></canvas>
+        <div class="texture-orbit" aria-hidden="true">
+          <img src="wall_texture_3x4_ps.png" alt="" />
+          <span class="acid-core"></span>
+          <span class="acid-glare"></span>
+        </div>
+        <div class="hero-noise" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <p class="badge"><span>NEW</span> 高级 AI 电商设计师 / 安俊 / 作品集 2026</p>
+          <h1>AI Commerce Visual Portfolio</h1>
+          <p class="hero-copy">
+            用 AI 工作流重建电商视觉生产：海报、详情页、大促专题、视频短片，
+            一屏看清商业设计能力。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#works">查看作品</a>
+            <a class="button play" href="#video"><span></span>AI 视频</a>
+          </div>
+
+          <div class="stats-grid" aria-label="作品集数据">
+            <article data-scroll-target="#posters" role="button" tabindex="0">
+              <span class="stat-icon">▧</span>
+              <strong>10</strong>
+              <p>张电商海报</p>
+            </article>
+            <article data-scroll-target="#detail" role="button" tabindex="0">
+              <span class="stat-icon">▤</span>
+              <strong>2+2</strong>
+              <p>详情页 / 大促首页</p>
+            </article>
+            <article data-scroll-target="#video" role="button" tabindex="0">
+              <span class="stat-icon">▶</span>
+              <strong>3</strong>
+              <p>AI 视频方向</p>
+            </article>
+          </div>
+          <div class="brand-strip hero-brand-strip" aria-label="brand experience logos">
+            <span class="brand-logo-lockup">
+              <img src="assets/brand/yierdun-logo.png" alt="医尔顿 logo" />
+            </span>
+            <img src="assets/reference/tencent-white.png" alt="Tencent" />
+            <img src="assets/reference/google-white.png" alt="Google" />
+            <img src="assets/reference/openai-white.png" alt="OpenAI" />
+            <img src="assets/reference/spacex-white.png" alt="SpaceX" />
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-panel">
+        <div class="profile-photo">
+          <img src="assets/reference/anjun-avatar.jpg" alt="Anjun profile portrait" />
+        </div>
+        <div>
+          <p class="section-kicker">Profile</p>
+          <h2>安俊，高级 A 电商设计师</h2>
+        </div>
+        <div class="profile-copy">
+          <p>
+            聚焦电商视觉、商品详情页、活动首页和 AI 辅助创意生产。作品集将用案例拆解
+            呈现从调研、分析、草图、视觉策略到落地效果的完整过程。
+          </p>
+          <ul>
+            <li>重点履历：品牌视觉、电商项目、AI 工作流搭建</li>
+            <li>设计宣言：让页面先解决商业问题，再制造视觉记忆点</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="works">
+        <div class="section-heading">
+          <p class="section-kicker">Work Index</p>
+          <h2>作品板块分类</h2>
+        </div>
+        <div class="category-grid">
+          <a class="category-card" href="#posters">
+            <span>01</span>
+            <h3>海报视觉</h3>
+            <p>10 张海报直接展示，突出合成、字体和促销氛围。</p>
+          </a>
+          <a class="category-card" href="#detail">
+            <span>02</span>
+            <h3>详情页专题</h3>
+            <p>2 套详情页按调研、分析、草图、色彩和落地效果拆解。</p>
+          </a>
+          <a class="category-card" href="#campaign">
+            <span>03</span>
+            <h3>电商大促</h3>
+            <p>2 套大促首页展示活动节奏、主 KV 和会场分区能力。</p>
+          </a>
+          <a class="category-card" href="#video">
+            <span>04</span>
+            <h3>AI 视频</h3>
+            <p>展示 AI 短片、分镜、动态卖点和视觉延展能力。</p>
+          </a>
+        </div>
+        <div class="work-library-actions">
+          <button type="button" data-library="posters">更多海报作品</button>
+          <button type="button" data-library="detail">更多详情长图</button>
+          <button type="button" data-library="campaign">更多大促首页</button>
+          <button type="button" data-library="video">更多 AI 视频</button>
+        </div>
+      </section>
+
+      <section class="section" id="posters">
+        <div class="section-heading split">
+          <div>
+            <p class="section-kicker">Posters</p>
+            <h2>海报作品</h2>
+          </div>
+          <p>10 张海报无需逐张拆解，作为视觉执行能力墙展示。</p>
+        </div>
+        <div class="poster-wall">
+          <article class="poster-card tall">
+            <img src="assets/reference/poster-01-sanzhisongshu.png" alt="Poster 01" />
+            <span>Poster 01</span>
+          </article>
+          <article class="poster-card">
+            <img src="assets/reference/poster-02-yili.jpg" alt="Poster 02" />
+            <span>Poster 02</span>
+          </article>
+          <article class="poster-card wide">
+            <img src="assets/reference/poster-03-kids-care.png" alt="Poster 03" />
+            <span>Poster 03</span>
+          </article>
+          <article class="poster-card">
+            <img src="assets/reference/poster-05-byhealth.png" alt="Poster 04" />
+            <span>Poster 04</span>
+          </article>
+          <article class="poster-card tall warm">
+            <img src="assets/reference/poster-06-proya.png" alt="Poster 05" />
+            <span>Poster 05</span>
+          </article>
+          <article class="poster-card cool">
+            <img src="assets/reference/poster-07-cow-618-1.jpg" alt="Poster 06" />
+            <span>Poster 06</span>
+          </article>
+          <article class="poster-card wide warm">
+            <img src="assets/reference/poster-09-cow-daily.jpg" alt="Poster 07" />
+            <span>Poster 07</span>
+          </article>
+          <article class="poster-card">
+            <img src="assets/reference/poster-10-feihe.png" alt="Poster 08" />
+            <span>Poster 08</span>
+          </article>
+          <article class="poster-card cool">
+            <img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Poster 09" />
+            <span>Poster 09</span>
+          </article>
+          <article class="poster-card">
+            <img src="assets/reference/campaign-02-feihe-618.jpg" alt="Poster 10" />
+            <span>Poster 10</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" id="detail">
+        <div class="case-intro">
+          <p class="section-kicker">Detail Page Case</p>
+          <h2>详情页重构案例</h2>
+          <p>
+            每套详情页都按“项目背景 - 目标 - 调研 - 分析 - 草图 - 色彩 - 素材 - 落地”
+            的顺序拆解，展示你的策划能力，而不只是最终长图。
+          </p>
+        </div>
+
+        <div class="case-grid detail-gallery">
+          <div class="detail-gallery-head">
+            <span>02</span>
+            <strong>详情页设计</strong>
+            <div class="detail-swatches" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <article class="case-card detail-scroll-card">
+            <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
+            <div class="case-cover detail-scroll-window">
+              <img src="assets/reference/detail-01-dji-osmo.jpg" alt="Detail page case 01" />
+            </div>
+            <span>Detail 01</span>
+          </article>
+          <article class="case-card detail-scroll-card">
+            <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
+            <div class="case-cover detail-scroll-window">
+              <img src="assets/reference/poster-09-cow-daily.jpg" alt="Detail page case 02" />
+            </div>
+            <span>Detail 02</span>
+          </article>
+          <article class="case-card detail-scroll-card">
+            <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
+            <div class="case-cover detail-scroll-window">
+              <img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Detail page case 03" />
+            </div>
+            <span>Detail 03</span>
+          </article>
+          <article class="case-card detail-scroll-card">
+            <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
+            <div class="case-cover detail-scroll-window">
+              <img src="assets/reference/campaign-02-feihe-618.jpg" alt="Detail page case 04" />
+            </div>
+            <span>Detail 04</span>
+          </article>
+          <article class="case-card detail-scroll-card">
+            <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
+            <div class="case-cover detail-scroll-window">
+              <img src="assets/reference/poster-10-feihe.png" alt="Detail page case 05" />
+            </div>
+            <span>Detail 05</span>
+          </article>
+          <article class="case-card detail-scroll-card">
+            <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
+            <div class="case-cover detail-scroll-window">
+              <img src="assets/reference/poster-03-kids-care.png" alt="Detail page case 06" />
+            </div>
+            <span>Detail 06</span>
+          </article>
+        </div>
+
+        <div class="case-grid legacy-case-grid">
+          <article class="case-card">
+            <div class="case-cover milk">
+              <img src="assets/reference/detail-01-dji-osmo.jpg" alt="Detail page case preview" />
+            </div>
+            <div class="case-body">
+              <p class="case-label">Case 01 / 详情页重构</p>
+              <h3>A2 路蛋白纯牛奶详情页重构</h3>
+              <p>
+                以老详情页转化下滑为切入点，重排卖点层级，强化首屏购买理由、
+                营养价值和用户信任模块。
+              </p>
+            </div>
+          </article>
+          <article class="case-card">
+            <div class="case-cover product">
+              <img src="assets/reference/poster-09-cow-daily.jpg" alt="Detail page visual preview" />
+            </div>
+            <div class="case-body">
+              <p class="case-label">Case 02 / 详情页优化</p>
+              <h3>高转化商品详情页优化</h3>
+              <p>
+                从评论反馈、竞品结构和运营目标出发，建立产品信息漏斗和转化型页面节奏。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="process-board">
+          <div class="process-text">
+            <p class="section-kicker">Process</p>
+            <h3>案例拆解模板</h3>
+            <p>后续你的 2 套详情页和 2 套大促首页都按这个模板生成完整过程页。</p>
+          </div>
+          <div class="process-steps">
+            <span>项目背景</span>
+            <span>调研</span>
+            <span>分析</span>
+            <span>草图</span>
+            <span>色彩</span>
+            <span>素材参考</span>
+            <span>最终落地</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section campaign" id="campaign">
+        <div class="case-intro">
+          <p class="section-kicker">Campaign Homepage</p>
+          <h2>电商大促首页</h2>
+          <p>
+            用主视觉、利益点、会场分流、商品陈列和活动氛围构成完整首页叙事。
+          </p>
+        </div>
+        <div class="campaign-showcase">
+          <article class="campaign-work-card">
+            <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
+            <div class="campaign-scroll-window">
+              <img class="campaign-image" src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Campaign homepage 01" />
+            </div>
+            <span>Campaign 01</span>
+            <h3>品牌活动会场首页</h3>
+          </article>
+          <article class="campaign-work-card">
+            <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
+            <div class="campaign-scroll-window">
+              <img class="campaign-image" src="assets/reference/campaign-02-feihe-618.jpg" alt="Campaign homepage 02" />
+            </div>
+            <span>Campaign 02</span>
+            <h3>平台型大促视觉系统</h3>
+          </article>
+          <article class="campaign-work-card">
+            <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
+            <div class="campaign-scroll-window">
+              <img class="campaign-image" src="assets/reference/poster-09-cow-daily.jpg" alt="Campaign homepage 03" />
+            </div>
+            <span>Campaign 03</span>
+            <h3>节日促销专题首页</h3>
+          </article>
+          <article class="campaign-work-card">
+            <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
+            <div class="campaign-scroll-window">
+              <img class="campaign-image" src="assets/reference/poster-10-feihe.png" alt="Campaign homepage 04" />
+            </div>
+            <span>Campaign 04</span>
+            <h3>商品会场横屏视觉</h3>
+          </article>
+        </div>
+        <div class="campaign-grid legacy-campaign-grid">
+          <article>
+            <img class="campaign-image" src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Campaign homepage 01" />
+            <span>Campaign 01</span>
+            <h3>品牌活动会场首页</h3>
+            <p>适合展示促销节奏、用户路径、首屏冲击和商品分区。</p>
+          </article>
+          <article>
+            <img class="campaign-image" src="assets/reference/campaign-02-feihe-618.jpg" alt="Campaign homepage 02" />
+            <span>Campaign 02</span>
+            <h3>平台型大促视觉系统</h3>
+            <p>适合展示多模块统一、氛围延展和完整页面落地能力。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="video-section" id="video">
+        <div>
+          <p class="section-kicker">AI Video</p>
+          <h2>AI 视频与动态视觉</h2>
+          <p>
+            这里可以放 AI 分镜、产品短片、节日动效和视频封面，作为你区别于普通电商设计师的亮点。
+          </p>
+        </div>
+        <div class="video-board">
+          <article class="video-frame">
+            <span></span>
+            <strong>AI VIDEO 01</strong>
+            <p>产品短片</p>
+          </article>
+          <article class="video-frame">
+            <span></span>
+            <strong>AI VIDEO 02</strong>
+            <p>动态主 KV</p>
+          </article>
+          <article class="video-frame">
+            <span></span>
+            <strong>AI VIDEO 03</strong>
+            <p>分镜脚本</p>
+          </article>
+          <article class="video-frame">
+            <span></span>
+            <strong>AI VIDEO 04</strong>
+            <p>节日动效</p>
+          </article>
+          <button class="section-more" type="button" data-library="video">查看更多 AI 视频</button>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <p class="section-kicker">Contact</p>
+        <h2>准备把真实作品替换进来。</h2>
+        <p>下一步放入 2 套大促首页、2 套详情页和 10 张海报，我会继续生成案例文案和过程草图。</p>
+        <a class="button primary" href="tel:18600000000">联系安俊</a>
+      </section>
+    </main>
+
+    <a class="back-to-top" href="#top" aria-label="回到页头">↑</a>
+    <div class="detail-lightbox" aria-hidden="true">
+      <button class="detail-lightbox-close" type="button" aria-label="关闭">×</button>
+      <div class="detail-lightbox-frame">
+        <img src="" alt="详情页放大预览" />
+      </div>
+    </div>
+    <div class="work-library" aria-hidden="true">
+      <button class="work-library-close" type="button" aria-label="关闭">×</button>
+      <div class="work-library-panel">
+        <aside>
+          <p>WORK LIBRARY</p>
+          <h2>更多作品</h2>
+          <button type="button" data-library-tab="posters">海报</button>
+          <button type="button" data-library-tab="detail">详情页</button>
+          <button type="button" data-library-tab="campaign">大促首页</button>
+          <button type="button" data-library-tab="video">AI 视频</button>
+        </aside>
+        <div class="work-library-content">
+          <div class="library-grid is-active" data-library-panel="posters">
+            <article><img src="assets/reference/poster-01-sanzhisongshu.png" alt="" /><strong>Poster 01</strong></article>
+            <article><img src="assets/reference/poster-02-yili.jpg" alt="" /><strong>Poster 02</strong></article>
+            <article><img src="assets/reference/poster-03-kids-care.png" alt="" /><strong>Poster 03</strong></article>
+            <article><img src="assets/reference/poster-05-byhealth.png" alt="" /><strong>Poster 04</strong></article>
+            <article><img src="assets/reference/poster-06-proya.png" alt="" /><strong>Poster 05</strong></article>
+            <article><img src="assets/reference/poster-10-feihe.png" alt="" /><strong>Poster 06</strong></article>
+          </div>
+          <div class="library-grid" data-library-panel="detail">
+            <article><img src="assets/reference/detail-01-dji-osmo.jpg" alt="" /><strong>Detail 01</strong></article>
+            <article><img src="assets/reference/poster-09-cow-daily.jpg" alt="" /><strong>Detail 02</strong></article>
+            <article><img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="" /><strong>Detail 03</strong></article>
+            <article><img src="assets/reference/campaign-02-feihe-618.jpg" alt="" /><strong>Detail 04</strong></article>
+          </div>
+          <div class="library-grid library-grid-wide" data-library-panel="campaign">
+            <article><img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="" /><strong>Campaign 01</strong></article>
+            <article><img src="assets/reference/campaign-02-feihe-618.jpg" alt="" /><strong>Campaign 02</strong></article>
+            <article><img src="assets/reference/poster-09-cow-daily.jpg" alt="" /><strong>Campaign 03</strong></article>
+          </div>
+          <div class="library-grid library-grid-wide" data-library-panel="video">
+            <article><div class="video-thumb">AI VIDEO 01</div><strong>产品短片</strong></article>
+            <article><div class="video-thumb">AI VIDEO 02</div><strong>动态主 KV</strong></article>
+            <article><div class="video-thumb">AI VIDEO 03</div><strong>分镜脚本</strong></article>
+            <article><div class="video-thumb">AI VIDEO 04</div><strong>节日动效</strong></article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="site-data.js?v=20260704-linked-work-library"></script>
+    <script src="script.js?v=20260704-linked-work-library"></script>
+  </body>
+</html>
