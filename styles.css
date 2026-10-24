@@ -247,6 +247,7 @@ a {
 }
 
 .hero {
+  --hero-lift: 40px;
   position: relative;
   min-height: 112vh;
   display: grid;
@@ -310,7 +311,7 @@ a {
 .flower-video-layer video {
   z-index: 1;
   object-position: center 40%;
-  transform: scale(1.06);
+  transform: translateY(calc(-1 * var(--hero-lift))) scale(1.06);
   filter: saturate(1.14) contrast(1.08) brightness(0.94);
 }
 
@@ -585,6 +586,7 @@ a {
   width: min(1080px, 100%);
   margin: 0 auto;
   text-align: center;
+  transform: translateY(calc(-1 * var(--hero-lift)));
 }
 
 .badge {
@@ -1944,7 +1946,7 @@ img,
     aspect-ratio: 1;
     object-fit: cover;
     object-position: center;
-    transform: none;
+    transform: translateY(calc(-1 * var(--hero-lift)));
     mask-image: linear-gradient(to bottom, transparent, black 14%, black 80%, transparent);
   }
 
@@ -1972,6 +1974,7 @@ img,
   }
 
   .hero {
+    --hero-lift: 24px;
     padding-top: 190px;
   }
 
