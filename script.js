@@ -160,7 +160,7 @@ function openArtwork(image, trigger) {
   detailLightboxClose.focus({ preventScroll: true });
 }
 
-document.querySelectorAll(".poster-wall .poster-card").forEach((card) => {
+document.querySelectorAll(".poster-wall .poster-card, .selected-image").forEach((card) => {
   const image = card.querySelector("img");
   if (!image) return;
   card.setAttribute("role", "button");

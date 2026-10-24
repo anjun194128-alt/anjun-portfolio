@@ -4,29 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>安俊作品集后台</title>
-    <link rel="stylesheet" href="admin.css?v=20260704-linked-work-library" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'" />
+    <link rel="stylesheet" href="admin.css?v=20261024-online-cms" />
   </head>
-  <body>
+  <body class="admin-page">
     <header class="admin-header">
       <div>
         <p>Portfolio Admin</p>
         <h1>作品集后台</h1>
       </div>
       <nav>
-        <a href="index.html?v=20260703-admin-panel">查看前台</a>
-        <button id="resetAll" type="button">清空自定义</button>
+        <a href="index.html" target="_blank" rel="noopener">查看网站</a>
+        <button id="logout" type="button" hidden>退出登录</button>
       </nav>
     </header>
 
-    <main>
+    <main id="login-screen">
+      <section class="auth-panel" aria-labelledby="login-title">
+        <p class="kicker">GitHub Authorization</p>
+        <h2 id="login-title">登录作品集后台</h2>
+        <p>仅拥有作品集仓库编辑权限的账号可以发布。</p>
+        <form id="login-form">
+          <label for="access-token">GitHub 授权密钥</label>
+          <input id="access-token" type="password" autocomplete="off" spellcheck="false" required />
+          <button id="login-button" type="submit">验证并登录</button>
+          <p id="login-error" role="alert"></p>
+        </form>
+        <details>
+          <summary>首次登录：创建仓库授权密钥</summary>
+          <ol>
+            <li><a href="https://github.com/settings/personal-access-tokens/new?name=Anjun+Portfolio+Admin&amp;contents=write" target="_blank" rel="noopener noreferrer">前往 GitHub 创建细粒度授权密钥</a>，使用你的 GitHub 账号登录。</li>
+            <li>Repository access 选择 Only select repositories，只勾选 <strong>anjun-portfolio</strong>。</li>
+            <li>Repository permissions 中的 <strong>Contents</strong> 设为 <strong>Read and write</strong>，设置有效期并生成密钥。</li>
+            <li>将密钥填入上方登录框。密钥仅在本次会话中使用，退出或刷新后需要重新登录。</li>
+          </ol>
+        </details>
+      </section>
+    </main>
+
+    <main id="editor" hidden>
       <section class="panel intro-panel">
         <div>
-          <p class="kicker">使用方式</p>
-          <h2>上传后会自动保存到本机浏览器</h2>
+          <p class="kicker" id="account-label"></p>
+          <h2>内容管理</h2>
         </div>
-        <p>
-          这里适合后期自己换 logo、头像、海报、详情页和大促图。保存后返回前台刷新即可看到变化。
-        </p>
+        <div>
+          <p id="publish-status" role="status" aria-live="polite">未发布修改</p>
+          <div class="publish-actions">
+            <button id="publish" type="button">确认发布</button>
+            <button id="import-draft" type="button">恢复本机草稿</button>
+            <button id="resetAll" type="button">重新载入线上版本</button>
+            <a href="https://github.com/anjun194128-alt/anjun-portfolio/actions" target="_blank" rel="noopener">发布记录</a>
+          </div>
+        </div>
       </section>
 
       <section class="panel">
@@ -57,7 +89,7 @@
           </label>
         </div>
         <div class="actions">
-          <button id="saveText" data-save-text type="button">保存文字</button>
+          <button id="saveText" data-save-text type="button">保存文字草稿</button>
         </div>
       </section>
 
@@ -71,7 +103,7 @@
           <label>按钮文字<input id="contactButton" type="text" value="联系安俊" /></label>
           <label class="wide">说明文字<textarea id="contactCopy" rows="3">电商视觉、品牌活动与 AI 创意设计，欢迎联系安俊，聊聊你的项目。</textarea></label>
         </div>
-        <div class="actions"><button data-save-text type="button">保存首页联系文字</button></div>
+        <div class="actions"><button data-save-text type="button">保存首页联系草稿</button></div>
       </section>
 
       <section class="panel" id="contact-page-editor">
@@ -92,7 +124,7 @@
           <label class="wide">页尾文字<textarea id="contactFooter" rows="2">期待与你一起完成下一个好作品。</textarea></label>
         </div>
         <div class="actions">
-          <button data-save-text type="button">保存联系方式</button>
+          <button data-save-text type="button">保存联系方式草稿</button>
           <a href="contact.html">查看联系方式页面</a>
         </div>
       </section>
@@ -100,7 +132,7 @@
       <section class="panel">
         <div class="panel-title">
           <p class="kicker">Brand</p>
-          <h2>品牌与头像</h2>
+          <h2>品牌与精选封面</h2>
         </div>
         <div class="asset-grid compact">
           <article class="asset-card" data-image-field="logo">
@@ -113,7 +145,39 @@
             <strong>头像</strong>
             <input type="file" accept="image/*" />
           </article>
+          <article class="asset-card" data-image-field="featured01"><div class="preview"></div><strong>精选项目 01 封面</strong><input type="file" accept="image/*" /></article>
+          <article class="asset-card" data-image-field="featured02"><div class="preview"></div><strong>精选项目 02 封面</strong><input type="file" accept="image/*" /></article>
         </div>
+      </section>
+
+      <section class="panel" id="new-section-editor">
+        <div class="panel-title"><p class="kicker">Selected / Case Study / About</p><h2>精选项目、案例拆解与履历</h2></div>
+        <div class="form-grid">
+          <label>精选项目标题<input id="featuredTitle" type="text" /></label>
+          <label>精选项目说明<input id="featuredIntro" type="text" /></label>
+          <label>精选项目 01 名称<input id="featuredOneTitle" type="text" /></label>
+          <label>精选项目 01 说明<textarea id="featuredOneCopy" rows="3"></textarea></label>
+          <label>精选项目 02 名称<input id="featuredTwoTitle" type="text" /></label>
+          <label>精选项目 02 说明<textarea id="featuredTwoCopy" rows="3"></textarea></label>
+          <label>案例拆解标题<input id="processTitle" type="text" /></label>
+          <label>案例拆解导语<textarea id="processIntro" rows="3"></textarea></label>
+          <label>首屏与场景<textarea id="processGoal" rows="3"></textarea></label>
+          <label>信息与阅读<textarea id="processStructure" rows="3"></textarea></label>
+          <label>色彩与视觉<textarea id="processVisual" rows="3"></textarea></label>
+          <label>完整呈现<textarea id="processDelivery" rows="3"></textarea></label>
+          <label>关于板块标题<input id="aboutTitle" type="text" /></label>
+          <label>个人介绍<textarea id="aboutCopy" rows="3"></textarea></label>
+          <label>从业年限<input id="aboutYears" type="text" /></label>
+          <label>任职经历<input id="aboutCompanies" type="text" /></label>
+          <label class="wide">项目成果<textarea id="aboutResults" rows="3"></textarea></label>
+        </div>
+        <div class="actions"><button data-save-text type="button">保存板块草稿</button></div>
+      </section>
+
+      <section class="panel" id="store-editor">
+        <div class="panel-title"><p class="kicker">Store Portfolio</p><h2>店铺与商品案例</h2></div>
+        <div id="store-groups"></div>
+        <div class="actions"><button id="save-stores" type="button">保存案例草稿</button></div>
       </section>
 
       <section class="panel">
@@ -155,8 +219,18 @@
       </section>
     </main>
 
+    <dialog id="publish-confirm" aria-labelledby="confirm-title">
+      <h2 id="confirm-title">发布到公开网站</h2>
+      <p>确认后，所有访客都能看到这些修改。</p>
+      <div id="change-summary"></div>
+      <div class="publish-actions">
+        <button id="cancel-publish" type="button">返回编辑</button>
+        <button id="confirm-publish" type="button">确认发布</button>
+      </div>
+    </dialog>
     <div id="toast" aria-live="polite"></div>
-    <script src="site-data.js?v=20261024-edit-contact"></script>
-    <script src="admin.js?v=20261024-edit-contact"></script>
+    <script src="site-data.js?v=20261024-online-cms"></script>
+    <script src="cms-client.js?v=20261024-online-cms"></script>
+    <script src="admin.js?v=20261024-online-cms"></script>
   </body>
 </html>

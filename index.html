@@ -9,7 +9,7 @@
       content="安俊的 AI 电商设计作品集，展示海报、详情页、大促专题、AI 视频与电商视觉策划过程。"
     />
     <link rel="preload" as="image" href="assets/media/flower-poster.jpg" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=20261024-poster-preview" />
+    <link rel="stylesheet" href="styles.css?v=20261024-online-cms" />
   </head>
   <body>
     <div class="cursor-glow" aria-hidden="true"></div>
@@ -63,7 +63,7 @@
             一屏看清商业设计能力。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#works">查看作品</a>
+            <a class="button primary" href="#featured">查看作品</a>
             <a class="button play" href="#video"><span></span>AI 视频</a>
           </div>
 
@@ -113,6 +113,35 @@
             <li>重点履历：品牌视觉、电商项目、AI 工作流搭建</li>
             <li>设计宣言：让页面先解决商业问题，再制造视觉记忆点</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="section" id="featured">
+        <div class="section-heading split">
+          <div><p class="section-kicker">Selected Work</p><h2>精选项目</h2></div>
+          <p class="section-description">从商品详情到品牌会场，呈现不同场景下的视觉表达与信息组织。</p>
+        </div>
+        <div class="selected-grid">
+          <article class="selected-work">
+            <button class="selected-image" type="button" aria-label="查看运动影像详情完整作品">
+              <img loading="lazy" decoding="async" data-src="assets/reference/detail-01-dji-osmo.jpg" alt="运动影像商品详情" />
+              <span aria-hidden="true">↗</span>
+            </button>
+            <p class="selected-meta">01 / PRODUCT DETAIL</p>
+            <h3>运动影像 · 商品详情</h3>
+            <p class="selected-copy">以产品为视觉中心，用场景、功能与细节组织一条完整的阅读路径。</p>
+            <a class="project-link" href="#process">查看设计拆解 <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="selected-work">
+            <button class="selected-image" type="button" aria-label="查看品牌活动首页完整作品">
+              <img loading="lazy" decoding="async" data-src="assets/reference/campaign-01-jiuzhitang.jpg" alt="品牌活动会场首页" />
+              <span aria-hidden="true">↗</span>
+            </button>
+            <p class="selected-meta">02 / CAMPAIGN DESIGN</p>
+            <h3>品牌活动 · 会场首页</h3>
+            <p class="selected-copy">围绕活动主题梳理主视觉、促销信息与商品分区，保持整页节奏统一。</p>
+            <a class="project-link" href="#campaign">查看活动作品 <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
       </section>
 
@@ -369,6 +398,19 @@
         </div>
       </section>
 
+      <section class="section" id="process">
+        <div class="section-heading split">
+          <div><p class="section-kicker">Case Study / Product Detail</p><h2>运动影像详情 · 设计拆解</h2></div>
+          <p class="section-description">以现有运动相机长图为例，从首屏、信息、视觉与呈现四个层次复盘页面。</p>
+        </div>
+        <ol class="case-breakdown">
+          <li><span class="process-number">01</span><h3>首屏与场景</h3><p data-process="goal">首屏以产品与户外场景建立使用语境，先交代产品定位和拍摄场景，再引出功能卖点。</p></li>
+          <li><span class="process-number">02</span><h3>信息与阅读</h3><p data-process="structure">通过“八大理由”提炼核心信息，再展开功能模块，让快速浏览与深入阅读各有入口。</p></li>
+          <li><span class="process-number">03</span><h3>色彩与视觉</h3><p data-process="visual">深蓝色环境承接户外影像主题，以冷色高光和明暗对比突出产品轮廓，保持全页视觉统一。</p></li>
+          <li><span class="process-number">04</span><h3>完整呈现</h3><p data-process="delivery">保留长图的连续阅读，并提供局部滚动与原图放大，让整页节奏和产品细节都能被看见。</p></li>
+        </ol>
+      </section>
+
       <section class="video-section" id="video">
         <div>
           <p class="section-kicker">AI Video</p>
@@ -400,6 +442,21 @@
           </article>
           <button class="section-more" type="button" data-library="video">查看更多 AI 视频</button>
         </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="section-heading"><p class="section-kicker">About / Experience</p><h2>关于安俊</h2></div>
+        <div class="about-layout">
+          <p class="about-copy">专注电商视觉与 AI 辅助创作。用清楚的信息层级和有记忆点的画面，让产品更容易被理解。</p>
+          <dl class="about-facts">
+            <div><dt>设计方向</dt><dd>电商视觉设计</dd></div>
+            <div><dt>项目类型</dt><dd>商品详情 / 活动首页 / 海报视觉</dd></div>
+            <div data-optional><dt>从业年限</dt><dd data-fact="years">10 年</dd></div>
+            <div data-optional><dt>任职经历</dt><dd data-fact="companies">润研科技有限公司 · 公司规模约 500 人</dd></div>
+            <div data-optional><dt>项目成果</dt><dd data-fact="results">天猫、淘宝、拼多多、抖音等平台的店铺内容设计</dd></div>
+          </dl>
+        </div>
+        <div class="store-links" id="store-links" aria-label="店铺与商品案例"></div>
       </section>
 
       <section class="contact" id="contact">
@@ -458,7 +515,7 @@
         </div>
       </div>
     </div>
-    <script src="site-data.js?v=20261024-edit-contact"></script>
-    <script src="script.js?v=20261024-poster-preview"></script>
+    <script src="site-data.js?v=20261024-online-cms"></script>
+    <script src="script.js?v=20261024-online-cms"></script>
   </body>
 </html>
