@@ -19,8 +19,24 @@ const tiltTargets = document.querySelectorAll(
 
 revealTargets.forEach((item) => item.classList.add("reveal"));
 
+// Keep large artwork downloads outside the browser's eager lazy-load distance.
+const artworkObserver = new IntersectionObserver((entries) => {
+  entries.forEach(({ target, isIntersecting }) => {
+    if (!isIntersecting) return;
+    if (!target.getAttribute("src")) target.src = target.dataset.src;
+    target.removeAttribute("data-src");
+    artworkObserver.unobserve(target);
+  });
+}, { rootMargin: "300px" });
+document.querySelectorAll("img[data-src]").forEach(image => artworkObserver.observe(image));
+
 if (flowerVideo) {
+  let heroInView = true;
   const tryPlayFlowerVideo = () => {
+    if (document.hidden || !heroInView) {
+      flowerVideo.pause();
+      return;
+    }
     const playPromise = flowerVideo.play();
     if (playPromise && typeof playPromise.catch === "function") {
       playPromise.catch(() => {});
@@ -32,6 +48,13 @@ if (flowerVideo) {
   } else {
     tryPlayFlowerVideo();
   }
+
+  document.addEventListener("visibilitychange", tryPlayFlowerVideo);
+  const heroVideoObserver = new IntersectionObserver(([entry]) => {
+    heroInView = entry.isIntersecting;
+    tryPlayFlowerVideo();
+  });
+  heroVideoObserver.observe(flowerVideo.closest(".hero"));
 }
 
 if (particlesCanvas) {

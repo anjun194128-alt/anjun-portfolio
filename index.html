@@ -8,7 +8,8 @@
       name="description"
       content="安俊的 AI 电商设计作品集，展示海报、详情页、大促专题、AI 视频与电商视觉策划过程。"
     />
-    <link rel="stylesheet" href="styles.css?v=20260704-linked-work-library" />
+    <link rel="preload" as="image" href="assets/media/flower-poster.jpg" fetchpriority="high" />
+    <link rel="stylesheet" href="styles.css?v=20261024-fast-flower" />
   </head>
   <body>
     <div class="cursor-glow" aria-hidden="true"></div>
@@ -27,14 +28,12 @@
         <a href="#detail">详情专题</a>
         <a href="#video">AI视频</a>
         <a href="#contact">联系</a>
-        <a href="admin.html">后台</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
         <div id="scroll-video-container" class="flower-video-layer" aria-hidden="true">
-          <canvas id="video-canvas"></canvas>
           <video
             id="video-fallback"
             class="flower-video"
@@ -43,8 +42,8 @@
             loop
             playsinline
             preload="auto"
-            crossorigin="anonymous"
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260616_212935_bbf608da-62d1-4f25-9be4-c346e4d09cc8.mp4"
+            poster="assets/media/flower-poster.jpg"
+            src="assets/media/flower-720p.mp4"
           ></video>
           <div class="flower-video-overlay"></div>
         </div>
@@ -99,7 +98,7 @@
 
       <section class="profile-panel">
         <div class="profile-photo">
-          <img src="assets/reference/anjun-avatar.jpg" alt="Anjun profile portrait" />
+          <img loading="lazy" decoding="async" data-src="assets/reference/anjun-avatar.jpg" alt="Anjun profile portrait" />
         </div>
         <div>
           <p class="section-kicker">Profile</p>
@@ -162,43 +161,43 @@
         </div>
         <div class="poster-wall">
           <article class="poster-card tall">
-            <img src="assets/reference/poster-01-sanzhisongshu.png" alt="Poster 01" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-01-sanzhisongshu.png" alt="Poster 01" />
             <span>Poster 01</span>
           </article>
           <article class="poster-card">
-            <img src="assets/reference/poster-02-yili.jpg" alt="Poster 02" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-02-yili.jpg" alt="Poster 02" />
             <span>Poster 02</span>
           </article>
           <article class="poster-card wide">
-            <img src="assets/reference/poster-03-kids-care.png" alt="Poster 03" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-03-kids-care.png" alt="Poster 03" />
             <span>Poster 03</span>
           </article>
           <article class="poster-card">
-            <img src="assets/reference/poster-05-byhealth.png" alt="Poster 04" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-05-byhealth.png" alt="Poster 04" />
             <span>Poster 04</span>
           </article>
           <article class="poster-card tall warm">
-            <img src="assets/reference/poster-06-proya.png" alt="Poster 05" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-06-proya.png" alt="Poster 05" />
             <span>Poster 05</span>
           </article>
           <article class="poster-card cool">
-            <img src="assets/reference/poster-07-cow-618-1.jpg" alt="Poster 06" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-07-cow-618-1.jpg" alt="Poster 06" />
             <span>Poster 06</span>
           </article>
           <article class="poster-card wide warm">
-            <img src="assets/reference/poster-09-cow-daily.jpg" alt="Poster 07" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-09-cow-daily.jpg" alt="Poster 07" />
             <span>Poster 07</span>
           </article>
           <article class="poster-card">
-            <img src="assets/reference/poster-10-feihe.png" alt="Poster 08" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/poster-10-feihe.png" alt="Poster 08" />
             <span>Poster 08</span>
           </article>
           <article class="poster-card cool">
-            <img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Poster 09" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Poster 09" />
             <span>Poster 09</span>
           </article>
           <article class="poster-card">
-            <img src="assets/reference/campaign-02-feihe-618.jpg" alt="Poster 10" />
+            <img loading="lazy" decoding="async" data-src="assets/reference/campaign-02-feihe-618.jpg" alt="Poster 10" />
             <span>Poster 10</span>
           </article>
         </div>
@@ -225,42 +224,42 @@
           <article class="case-card detail-scroll-card">
             <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
             <div class="case-cover detail-scroll-window">
-              <img src="assets/reference/detail-01-dji-osmo.jpg" alt="Detail page case 01" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/detail-01-dji-osmo.jpg" alt="Detail page case 01" />
             </div>
             <span>Detail 01</span>
           </article>
           <article class="case-card detail-scroll-card">
             <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
             <div class="case-cover detail-scroll-window">
-              <img src="assets/reference/poster-09-cow-daily.jpg" alt="Detail page case 02" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/poster-09-cow-daily.jpg" alt="Detail page case 02" />
             </div>
             <span>Detail 02</span>
           </article>
           <article class="case-card detail-scroll-card">
             <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
             <div class="case-cover detail-scroll-window">
-              <img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Detail page case 03" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Detail page case 03" />
             </div>
             <span>Detail 03</span>
           </article>
           <article class="case-card detail-scroll-card">
             <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
             <div class="case-cover detail-scroll-window">
-              <img src="assets/reference/campaign-02-feihe-618.jpg" alt="Detail page case 04" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/campaign-02-feihe-618.jpg" alt="Detail page case 04" />
             </div>
             <span>Detail 04</span>
           </article>
           <article class="case-card detail-scroll-card">
             <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
             <div class="case-cover detail-scroll-window">
-              <img src="assets/reference/poster-10-feihe.png" alt="Detail page case 05" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/poster-10-feihe.png" alt="Detail page case 05" />
             </div>
             <span>Detail 05</span>
           </article>
           <article class="case-card detail-scroll-card">
             <button class="detail-expand" type="button" aria-label="放大查看详情页">放大</button>
             <div class="case-cover detail-scroll-window">
-              <img src="assets/reference/poster-03-kids-care.png" alt="Detail page case 06" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/poster-03-kids-care.png" alt="Detail page case 06" />
             </div>
             <span>Detail 06</span>
           </article>
@@ -269,7 +268,7 @@
         <div class="case-grid legacy-case-grid">
           <article class="case-card">
             <div class="case-cover milk">
-              <img src="assets/reference/detail-01-dji-osmo.jpg" alt="Detail page case preview" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/detail-01-dji-osmo.jpg" alt="Detail page case preview" />
             </div>
             <div class="case-body">
               <p class="case-label">Case 01 / 详情页重构</p>
@@ -282,7 +281,7 @@
           </article>
           <article class="case-card">
             <div class="case-cover product">
-              <img src="assets/reference/poster-09-cow-daily.jpg" alt="Detail page visual preview" />
+              <img loading="lazy" decoding="async" data-src="assets/reference/poster-09-cow-daily.jpg" alt="Detail page visual preview" />
             </div>
             <div class="case-body">
               <p class="case-label">Case 02 / 详情页优化</p>
@@ -324,7 +323,7 @@
           <article class="campaign-work-card">
             <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
             <div class="campaign-scroll-window">
-              <img class="campaign-image" src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Campaign homepage 01" />
+              <img loading="lazy" decoding="async" class="campaign-image" data-src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Campaign homepage 01" />
             </div>
             <span>Campaign 01</span>
             <h3>品牌活动会场首页</h3>
@@ -332,7 +331,7 @@
           <article class="campaign-work-card">
             <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
             <div class="campaign-scroll-window">
-              <img class="campaign-image" src="assets/reference/campaign-02-feihe-618.jpg" alt="Campaign homepage 02" />
+              <img loading="lazy" decoding="async" class="campaign-image" data-src="assets/reference/campaign-02-feihe-618.jpg" alt="Campaign homepage 02" />
             </div>
             <span>Campaign 02</span>
             <h3>平台型大促视觉系统</h3>
@@ -340,7 +339,7 @@
           <article class="campaign-work-card">
             <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
             <div class="campaign-scroll-window">
-              <img class="campaign-image" src="assets/reference/poster-09-cow-daily.jpg" alt="Campaign homepage 03" />
+              <img loading="lazy" decoding="async" class="campaign-image" data-src="assets/reference/poster-09-cow-daily.jpg" alt="Campaign homepage 03" />
             </div>
             <span>Campaign 03</span>
             <h3>节日促销专题首页</h3>
@@ -348,7 +347,7 @@
           <article class="campaign-work-card">
             <button class="detail-expand campaign-expand" type="button" aria-label="放大查看大促首页">放大</button>
             <div class="campaign-scroll-window">
-              <img class="campaign-image" src="assets/reference/poster-10-feihe.png" alt="Campaign homepage 04" />
+              <img loading="lazy" decoding="async" class="campaign-image" data-src="assets/reference/poster-10-feihe.png" alt="Campaign homepage 04" />
             </div>
             <span>Campaign 04</span>
             <h3>商品会场横屏视觉</h3>
@@ -356,13 +355,13 @@
         </div>
         <div class="campaign-grid legacy-campaign-grid">
           <article>
-            <img class="campaign-image" src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Campaign homepage 01" />
+            <img loading="lazy" decoding="async" class="campaign-image" data-src="assets/reference/campaign-01-jiuzhitang.jpg" alt="Campaign homepage 01" />
             <span>Campaign 01</span>
             <h3>品牌活动会场首页</h3>
             <p>适合展示促销节奏、用户路径、首屏冲击和商品分区。</p>
           </article>
           <article>
-            <img class="campaign-image" src="assets/reference/campaign-02-feihe-618.jpg" alt="Campaign homepage 02" />
+            <img loading="lazy" decoding="async" class="campaign-image" data-src="assets/reference/campaign-02-feihe-618.jpg" alt="Campaign homepage 02" />
             <span>Campaign 02</span>
             <h3>平台型大促视觉系统</h3>
             <p>适合展示多模块统一、氛围延展和完整页面落地能力。</p>
@@ -415,7 +414,7 @@
     <div class="detail-lightbox" aria-hidden="true">
       <button class="detail-lightbox-close" type="button" aria-label="关闭">×</button>
       <div class="detail-lightbox-frame">
-        <img src="" alt="详情页放大预览" />
+        <img loading="lazy" decoding="async" src="" alt="详情页放大预览" />
       </div>
     </div>
     <div class="work-library" aria-hidden="true">
@@ -431,23 +430,23 @@
         </aside>
         <div class="work-library-content">
           <div class="library-grid is-active" data-library-panel="posters">
-            <article><img src="assets/reference/poster-01-sanzhisongshu.png" alt="" /><strong>Poster 01</strong></article>
-            <article><img src="assets/reference/poster-02-yili.jpg" alt="" /><strong>Poster 02</strong></article>
-            <article><img src="assets/reference/poster-03-kids-care.png" alt="" /><strong>Poster 03</strong></article>
-            <article><img src="assets/reference/poster-05-byhealth.png" alt="" /><strong>Poster 04</strong></article>
-            <article><img src="assets/reference/poster-06-proya.png" alt="" /><strong>Poster 05</strong></article>
-            <article><img src="assets/reference/poster-10-feihe.png" alt="" /><strong>Poster 06</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-01-sanzhisongshu.png" alt="" /><strong>Poster 01</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-02-yili.jpg" alt="" /><strong>Poster 02</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-03-kids-care.png" alt="" /><strong>Poster 03</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-05-byhealth.png" alt="" /><strong>Poster 04</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-06-proya.png" alt="" /><strong>Poster 05</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-10-feihe.png" alt="" /><strong>Poster 06</strong></article>
           </div>
           <div class="library-grid" data-library-panel="detail">
-            <article><img src="assets/reference/detail-01-dji-osmo.jpg" alt="" /><strong>Detail 01</strong></article>
-            <article><img src="assets/reference/poster-09-cow-daily.jpg" alt="" /><strong>Detail 02</strong></article>
-            <article><img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="" /><strong>Detail 03</strong></article>
-            <article><img src="assets/reference/campaign-02-feihe-618.jpg" alt="" /><strong>Detail 04</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/detail-01-dji-osmo.jpg" alt="" /><strong>Detail 01</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-09-cow-daily.jpg" alt="" /><strong>Detail 02</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/campaign-01-jiuzhitang.jpg" alt="" /><strong>Detail 03</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/campaign-02-feihe-618.jpg" alt="" /><strong>Detail 04</strong></article>
           </div>
           <div class="library-grid library-grid-wide" data-library-panel="campaign">
-            <article><img src="assets/reference/campaign-01-jiuzhitang.jpg" alt="" /><strong>Campaign 01</strong></article>
-            <article><img src="assets/reference/campaign-02-feihe-618.jpg" alt="" /><strong>Campaign 02</strong></article>
-            <article><img src="assets/reference/poster-09-cow-daily.jpg" alt="" /><strong>Campaign 03</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/campaign-01-jiuzhitang.jpg" alt="" /><strong>Campaign 01</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/campaign-02-feihe-618.jpg" alt="" /><strong>Campaign 02</strong></article>
+            <article><img loading="lazy" decoding="async" data-src="assets/reference/poster-09-cow-daily.jpg" alt="" /><strong>Campaign 03</strong></article>
           </div>
           <div class="library-grid library-grid-wide" data-library-panel="video">
             <article><div class="video-thumb">AI VIDEO 01</div><strong>产品短片</strong></article>
@@ -459,6 +458,6 @@
       </div>
     </div>
     <script src="site-data.js?v=20260704-linked-work-library"></script>
-    <script src="script.js?v=20260704-linked-work-library"></script>
+    <script src="script.js?v=20261024-fast-flower"></script>
   </body>
 </html>
