@@ -1,0 +1,127 @@
+.contact-page {
+  min-height: 100svh;
+}
+
+.contact-header,
+.contact-main {
+  position: relative;
+  z-index: 1;
+  width: min(860px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 28px;
+}
+
+.contact-back {
+  color: var(--muted);
+  padding-block: 12px;
+}
+
+.contact-back:hover {
+  color: var(--text);
+}
+
+.contact-main {
+  padding-block: 64px 40px;
+}
+
+.contact-main h1 {
+  margin: 20px 0 16px;
+  font-family: var(--sans);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-style: normal;
+}
+
+.contact-lead,
+.contact-identity p,
+.contact-footer {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.contact-identity {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-block: 36px;
+}
+
+.contact-identity img {
+  flex: 0 0 64px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.contact-identity strong {
+  font-size: 20px;
+}
+
+.contact-identity p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.contact-phone {
+  padding-block: 28px 16px;
+  border-block: 1px solid var(--line);
+}
+
+.contact-phone h2 {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.phone-number {
+  display: inline-block;
+  font-size: 36px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-actions button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.copy-status {
+  min-height: 24px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-footer {
+  margin-top: 28px;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .contact-main {
+    padding-top: 32px;
+  }
+
+  .contact-main h1 {
+    font-size: 36px;
+  }
+
+  .phone-number {
+    font-size: 28px;
+  }
+}
