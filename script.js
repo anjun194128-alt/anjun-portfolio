@@ -8,6 +8,9 @@ const detailLightbox = document.querySelector(".detail-lightbox");
 const detailLightboxImage = document.querySelector(".detail-lightbox img");
 const detailLightboxFrame = document.querySelector(".detail-lightbox-frame");
 const detailLightboxClose = document.querySelector(".detail-lightbox-close");
+const detailLightboxZoom = document.querySelector(".detail-lightbox-zoom");
+let artworkTrigger = null;
+let artworkPreviousOverflow = "";
 const workLibrary = document.querySelector(".work-library");
 const workLibraryClose = document.querySelector(".work-library-close");
 const revealTargets = document.querySelectorAll(
@@ -138,22 +141,60 @@ document.querySelectorAll(".category-card").forEach((link) => {
   });
 });
 
+function openArtwork(image, trigger) {
+  const source = image.currentSrc || image.getAttribute("src") || image.dataset.src;
+  if (!source || !detailLightbox || !detailLightboxImage) return;
+
+  artworkTrigger = trigger;
+  artworkPreviousOverflow = document.body.style.overflow;
+  detailLightboxImage.src = source;
+  detailLightboxImage.alt = image.alt || "作品完整预览";
+  detailLightbox.classList.add("is-open");
+  detailLightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  detailLightboxFrame.classList.remove("is-zoomed");
+  detailLightboxFrame.scrollTop = 0;
+  detailLightboxFrame.scrollLeft = 0;
+  detailLightboxZoom.setAttribute("aria-pressed", "false");
+  detailLightboxZoom.textContent = "+";
+  detailLightboxClose.focus({ preventScroll: true });
+}
+
+document.querySelectorAll(".poster-wall .poster-card").forEach((card) => {
+  const image = card.querySelector("img");
+  if (!image) return;
+  card.setAttribute("role", "button");
+  card.tabIndex = 0;
+  card.setAttribute("aria-label", `放大查看 ${image.alt}`);
+  card.addEventListener("click", () => openArtwork(image, card));
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openArtwork(image, card);
+    }
+  });
+});
+
 document.querySelectorAll(".detail-scroll-card, .campaign-work-card").forEach((card) => {
   const button = card.querySelector(".detail-expand");
   const image = card.querySelector(".detail-scroll-window img, .campaign-scroll-window img");
 
   if (!button || !image || !detailLightbox || !detailLightboxImage) return;
 
-  button.addEventListener("click", () => {
-    detailLightboxImage.src = image.currentSrc || image.src;
-    detailLightbox.classList.add("is-open");
-    detailLightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    if (detailLightboxFrame) {
-      detailLightboxFrame.scrollTop = 0;
-    }
-  });
+  button.addEventListener("click", () => openArtwork(image, button));
 });
+
+if (detailLightboxZoom) {
+  detailLightboxZoom.addEventListener("click", () => {
+    const zoomed = detailLightboxFrame.classList.toggle("is-zoomed");
+    detailLightboxFrame.style.setProperty("--artwork-width", `${detailLightboxImage.naturalWidth}px`);
+    detailLightboxZoom.setAttribute("aria-pressed", String(zoomed));
+    detailLightboxZoom.textContent = zoomed ? "−" : "+";
+  });
+  detailLightboxImage.addEventListener("load", () => {
+    detailLightboxFrame.style.setProperty("--artwork-width", `${detailLightboxImage.naturalWidth}px`);
+  });
+}
 
 function showLibrary(name = "posters") {
   if (!workLibrary) return;
@@ -199,11 +240,12 @@ if (workLibrary) {
 }
 
 function closeDetailLightbox() {
-  if (!detailLightbox) return;
+  if (!detailLightbox || !detailLightbox.classList.contains("is-open")) return;
 
   detailLightbox.classList.remove("is-open");
   detailLightbox.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+  document.body.style.overflow = artworkPreviousOverflow;
+  artworkTrigger?.focus({ preventScroll: true });
 }
 
 if (detailLightboxClose) {
@@ -219,8 +261,18 @@ if (detailLightbox) {
 }
 
 window.addEventListener("keydown", (event) => {
+  if (detailLightbox?.classList.contains("is-open")) {
+    if (event.key === "Escape") closeDetailLightbox();
+    if (event.key === "Tab") {
+      const stops = [detailLightboxClose, detailLightboxZoom, detailLightboxFrame];
+      const step = event.shiftKey ? -1 : 1;
+      const index = stops.indexOf(document.activeElement);
+      event.preventDefault();
+      stops[(index + step + stops.length) % stops.length].focus();
+    }
+    return;
+  }
   if (event.key === "Escape") {
-    closeDetailLightbox();
     closeLibrary();
   }
 });

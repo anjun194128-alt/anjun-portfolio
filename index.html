@@ -9,7 +9,7 @@
       content="安俊的 AI 电商设计作品集，展示海报、详情页、大促专题、AI 视频与电商视觉策划过程。"
     />
     <link rel="preload" as="image" href="assets/media/flower-poster.jpg" fetchpriority="high" />
-    <link rel="stylesheet" href="styles.css?v=20261024-hero-lift" />
+    <link rel="stylesheet" href="styles.css?v=20261024-poster-preview" />
   </head>
   <body>
     <div class="cursor-glow" aria-hidden="true"></div>
@@ -411,10 +411,11 @@
     </main>
 
     <a class="back-to-top" href="#top" aria-label="回到页头">↑</a>
-    <div class="detail-lightbox" aria-hidden="true">
+    <div class="detail-lightbox" role="dialog" aria-modal="true" aria-label="作品完整预览" aria-hidden="true">
       <button class="detail-lightbox-close" type="button" aria-label="关闭">×</button>
-      <div class="detail-lightbox-frame">
-        <img loading="lazy" decoding="async" src="" alt="详情页放大预览" />
+      <button class="detail-lightbox-zoom" type="button" aria-label="切换原始尺寸" title="切换原始尺寸" aria-pressed="false">+</button>
+      <div class="detail-lightbox-frame" tabindex="0" aria-label="完整作品，可滚动查看">
+        <img decoding="async" alt="作品完整预览" />
       </div>
     </div>
     <div class="work-library" aria-hidden="true">
@@ -458,6 +459,6 @@
       </div>
     </div>
     <script src="site-data.js?v=20260704-linked-work-library"></script>
-    <script src="script.js?v=20261024-fast-flower"></script>
+    <script src="script.js?v=20261024-poster-preview"></script>
   </body>
 </html>

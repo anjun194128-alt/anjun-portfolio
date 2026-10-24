@@ -991,6 +991,7 @@ h3 {
 }
 
 .poster-card {
+  cursor: zoom-in;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -1018,6 +1019,11 @@ h3 {
 .poster-card:hover img {
   transform: scale(1.08);
   filter: brightness(1.08) contrast(1.05);
+}
+
+.poster-card:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
 }
 
 .poster-card::before {
@@ -1261,9 +1267,9 @@ h3 {
 
 .detail-lightbox-frame {
   width: min(760px, 92vw);
-  height: min(88vh, 1080px);
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: min(88vh, 1080px, calc(100dvh - 112px));
+  overflow: auto;
+  overscroll-behavior: contain;
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 22px;
   background: #111;
@@ -1276,7 +1282,13 @@ h3 {
   height: auto;
 }
 
-.detail-lightbox-close {
+.detail-lightbox-frame.is-zoomed img {
+  width: max(100%, var(--artwork-width));
+  max-width: none;
+}
+
+.detail-lightbox-close,
+.detail-lightbox-zoom {
   position: fixed;
   right: 28px;
   top: 24px;
@@ -1290,6 +1302,10 @@ h3 {
   font-size: 30px;
   line-height: 1;
   cursor: pointer;
+}
+
+.detail-lightbox-zoom {
+  right: 88px;
 }
 
 .work-library {
