@@ -112,19 +112,31 @@ async function hydrateImagePreviews() {
   );
 }
 
-document.querySelector("#saveText").addEventListener("click", () => {
+document.querySelectorAll("[data-save-text]").forEach(button => button.addEventListener("click", () => {
   const data = readTextData();
+  const section = button.closest("section");
+  const phoneInput = section.querySelector("#contactPhone");
+  const phone = phoneInput?.value.replace(/[\s()-]/g, "");
+  if (phone && !/^\+?\d{5,15}$/.test(phone)) {
+    showToast("请输入有效的电话号码");
+    phoneInput.focus();
+    return;
+  }
 
   Object.keys(schema.textFields).forEach((key) => {
-    const input = document.querySelector(`#${key}`);
+    const input = section.querySelector(`#${key}`);
     if (input) {
       data[key] = input.value.trim();
     }
   });
 
-  saveTextData(data);
-  showToast("文字已保存");
-});
+  try {
+    saveTextData(data);
+    showToast("文字已保存");
+  } catch {
+    showToast("保存失败，请检查浏览器存储空间");
+  }
+}));
 
 document.querySelectorAll("[data-image-field]").forEach((card) => {
   const input = card.querySelector('input[type="file"]');
@@ -147,7 +159,7 @@ document.querySelector("#resetAll").addEventListener("click", async () => {
   localStorage.removeItem(schema.textKey);
   await clearImages();
   document.querySelectorAll("input, textarea").forEach((field) => {
-    if (field.type !== "file") field.value = "";
+    if (field.type !== "file") field.value = field.defaultValue;
   });
   document.querySelectorAll("[data-image-field]").forEach((card) => setPreview(card, ""));
   showToast("已恢复默认");

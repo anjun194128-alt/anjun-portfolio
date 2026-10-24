@@ -8,6 +8,19 @@ const portfolioTextFields = {
   heroCopy: ".hero-copy",
   profileTitle: ".profile-panel h2",
   profileCopy: ".profile-copy p",
+  contactTitle: "#contact h2",
+  contactCopy: "#contact > p:not(.section-kicker)",
+  contactButton: "#contact .button",
+  contactPageKicker: ".contact-main > .section-kicker",
+  contactPageTitle: ".contact-main h1",
+  contactPageIntro: ".contact-lead",
+  contactName: ".contact-identity strong",
+  contactServices: ".contact-identity p",
+  contactPhoneLabel: "#phone-title",
+  contactPhone: ".phone-number",
+  contactCallButton: ".contact-actions a",
+  contactCopyButton: "#copy-phone",
+  contactFooter: ".contact-footer",
 };
 
 const portfolioImageFields = {
@@ -63,10 +76,12 @@ async function getPortfolioImage(id) {
 }
 
 function applyPortfolioText() {
-  const saved = localStorage.getItem(PORTFOLIO_TEXT_KEY);
-  if (!saved) return;
-
-  const data = JSON.parse(saved);
+  let data;
+  try {
+    data = JSON.parse(localStorage.getItem(PORTFOLIO_TEXT_KEY)) || {};
+  } catch {
+    return;
+  }
   Object.entries(portfolioTextFields).forEach(([key, selector]) => {
     const target = document.querySelector(selector);
     const value = data[key];
@@ -74,6 +89,14 @@ function applyPortfolioText() {
       target.textContent = value;
     }
   });
+  if (typeof data.contactPhone === "string") {
+    const phone = data.contactPhone.replace(/[\s()-]/g, "");
+    if (/^\+?\d{5,15}$/.test(phone)) {
+      document.querySelectorAll(".contact-phone a[href^='tel:']").forEach(link => {
+        link.href = `tel:${phone}`;
+      });
+    }
+  }
 }
 
 async function applyPortfolioImages() {
@@ -103,5 +126,5 @@ window.PortfolioAdminSchema = {
 
 document.addEventListener("DOMContentLoaded", () => {
   applyPortfolioText();
-  applyPortfolioImages().catch(() => {});
+  if (document.querySelector(".hero")) applyPortfolioImages().catch(() => {});
 });
